@@ -77,7 +77,7 @@ Group 1: Recipes that take 35 minutes or more to make
 
 Group 2: Recipes that take less than 35 minutes to make
 
-We chose 35 minutes as the divider between the two groups as this is the value that most evenly splits up the dataset into the groups (roughly 50% of the dataframe to_work is in each group).
+We chose 35 minutes as the divider between the two groups as this is the value that most evenly splits up the dataset into the groups (roughly 50% of the dataframe `to_work` is in each group).
 
 - Null Hypothesis: Our model is fair. Its accuracy for recipes that take less than 35 minutes and 35 minutes or more are roughly the same, and any differences are due to random chance.
 
