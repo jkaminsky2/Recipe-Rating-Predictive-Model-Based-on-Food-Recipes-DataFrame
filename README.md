@@ -21,7 +21,7 @@ In our model, we use a pipeline that consists of a preprocessing step followed b
 **Features:**
 
 **1. Quantitative features:** `calories (#)` (one feature). It is a quantitative feature representing the number of calories in a recipe. It is standardized (scaled) using the StandardScaler.
-
+### change
 **2. Ordinal feature:** `n_ingredients_cat` (one feature). It is a categorical feature derived from the `n_ingredients` feature. It categorizes the number of ingredients into three categories: 0 for less than 7 ingredients, 1 for 7-10 ingredients, and 2 for more than 10 ingredients. It is one-hot encoded using the OneHotEncoder.
 
 The model is split randomly into a training model (0.8) and test model (0.2) to make sure that we don't overfit our model.
