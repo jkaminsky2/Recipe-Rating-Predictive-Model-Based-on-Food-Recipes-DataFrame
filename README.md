@@ -85,7 +85,7 @@ We chose 35 minutes as the divider between the two groups as this is the value t
 
 Evaluation Metric: Accuracy
 
-Test Statistic: abs((Accuracy of recipes that take less than 35 minutes) - (Accuracy of recipes that take 35 minutes or more))
+Test Statistic: |(Accuracy of recipes that take less than 35 minutes) - (Accuracy of recipes that take 35 minutes or more)|
 
 Significance Level: alpha = 0.05
 
