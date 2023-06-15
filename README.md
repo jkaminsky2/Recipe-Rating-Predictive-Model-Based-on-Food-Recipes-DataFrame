@@ -66,17 +66,23 @@ Compared to the baseline model, the final model includes additional features and
 
 We decided to look into whether our model preform differently based on the number of minutes of a recipe. To further investigate this, we set up the following permuation test:
 
+
 Group 1: Recipes that take 35 minutes or more to make
+
 Group 2: Recipes that take less than 35 minutes to make
+
 We chose 35 minutes as the divider between the two groups as this is the value that most evenly splits up the dataset into the groups (roughly 50% of the dataframe to_work is in each group).
 
-- Null Hypothesis: Our model is fair. Its precision for recipes that take less than 35 minutes and 35 minutes or more are roughly the same, and any differences are due to random chance.
-- Alternative Hypothesis: Our model is unfair. Its precision for recipes that take less than 35 minutes is higher than its precision for recipes that take 35 minutes or more.
+- Null Hypothesis: Our model is fair. Its accuracy for recipes that take less than 35 minutes and 35 minutes or more are roughly the same, and any differences are due to random chance.
+
+- Alternative Hypothesis: Our model is unfair. Its accuracy for recipes that take less than 35 minutes is higher than its accuracy for recipes that take 35 minutes or more.
 
 Evaluation Metric: Accuracy
+
 Test Statistic: (Accuracy of recipes that take less than 35 minutes) - (Accuracy of recipes that take 35 minutes or more)
+
 Significance Level: alpha = 0.05
 
 p-value = 0
 
-Because our p-value = 0 is less than the significance level of alpha = 0.05, we can reject the null hypothesis. There is statistically significant evidence that our model could be unfair, specifically that its precision for recipes that take less than 35 minutes could be higher than its precision for recipes that take 35 minutes or more. It should be noted that due to not having randomized controlled trials, we cannot make definitive conclusions about the truth or falsehood of either hypothesis.
+Because our p-value = 0 is less than the significance level of alpha = 0.05, we can reject the null hypothesis. There is statistically significant evidence that our model could be unfair, specifically that its accuracy for recipes that take less than 35 minutes could be higher than its accuracy for recipes that take 35 minutes or more. It should be noted that due to not having randomized controlled trials, we cannot make definitive conclusions about the truth or falsehood of either hypothesis.
