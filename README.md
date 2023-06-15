@@ -59,9 +59,9 @@ To select the best hyperparameters, we used the GridSearchCV function, which per
 3. `criterion`: This parameter defines the quality measure used to evaluate the splits in the decision tree. The two options tested are 'gini' and 'entropy'. 'Gini' measures the impurity of a node, while 'entropy' calculates the information gain.
 
 The hyperparameters that gave the best results were:
-* 'decision_tree__criterion': 'gini'
-* 'decision_tree__max_depth': 10
-* 'decision_tree__min_samples_split': 275
+* `criterion`: 'gini'
+* `max_depth`: 10
+* `min_samples_split`: 275
 
 Compared to the baseline model, the final model includes additional features and uses a more advanced modeling algorithm. By incorporating information about the number of steps, cooking time, and number of ingredients, as well as one-hot encoding the categorical features, the model can capture more nuanced patterns in the data. Additionally, the decision tree classifier can handle non-linear relationships and interactions between features. The grid search helped in finding the best hyperparameters, resulting in a model that is fine-tuned for the data. Overall, the final model's performance shows a significant improvement over the baseline model due to the inclusion of these additional features and the use of a more sophisticated algorithm.
 
