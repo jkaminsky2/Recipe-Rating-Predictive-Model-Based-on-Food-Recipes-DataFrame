@@ -1,7 +1,7 @@
 **Authors: Joey Kaminsky and Ishaan Chadha**
 
 ---
-# Problem Identification
+# Framing the Problem
 
 From the Recipes and Ratings dataframes, we decided to investigate the following prediction problem: is there a way to predict the rating of a recipe given by a reviewer based on the other columns in the merged dataframe? In order to predict the response variable that is rating--which is an integer that is 1, 2, 3, 4, or 5--we chose to utilize a classificaton model in the form of a RandomForestClassifier with multiclass classification. We chose to try to predict rating in order to gain some insight as to what influences a rating, from the aspects of the recipe to the reviewer. In order to evaluate the model, we will utilize the metric accuracy  overall to see how the model preforms overall. We used this over others as there is no instrinsically worse error to commit (false negative and false positive are both equally bad), which means precision and recall are not suitable; we also want to make it such that the model makes as many accurate predictions as possible, which accuracy measures. Furthermore, since we do not particular care about precision and recall as much as we care about overall success of the model, F1-score is not all that suitable either, which lead us to choose accuracy as our evaluation metric.
 
@@ -27,3 +27,9 @@ The performance of the model is evaluated using accuracy, which is calculated by
 We believe that our model isn't up to the mark because it is highly biased towards predicting '5' as the rating of the recipes. Our model over predicts '5's and underpredicts all the other ratings. We believe that adding more features to our model that help distinguish between the rating of a recipe as a '5' and all the other ratings would greatly help our model predict other ratings too, and possibly increase the accuracy of our model.
 
 ---
+# Final Model
+
+
+---
+
+# Fairness Analysis
