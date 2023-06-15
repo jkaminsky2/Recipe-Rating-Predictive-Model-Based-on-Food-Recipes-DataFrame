@@ -22,7 +22,7 @@ In our model, we use a pipeline that consists of a preprocessing step followed b
 **Features:**
 
 **1. Quantitative features:** `calories (#)` (one feature). It is a quantitative feature representing the number of calories in a recipe. It is standardized (scaled) using the StandardScaler.
-### change
+
 **2. Ordinal feature:** `n_ingredients` (one feature). It categorizes the number of ingredients into three categories: 0 for less than 7 ingredients, 1 for 7-10 ingredients, and 2 for more than 10 ingredients. It is ordinally transformed using the FunctionTransformer.
 
 The model is split randomly into a training model (0.8) and test model (0.2) to make sure that we don't overfit our model.
@@ -37,20 +37,20 @@ Additionally, we need to improve upon the accuracy of the overall model. A good 
 # Final Model
 
 The features we added to the model are:
-1. 'n_steps': We used a Binarizer to convert this feature into a binary variable based on a threshold of 8. This feature represents the number of steps required to prepare the recipe. By converting it into a binary variable, the model can capture whether a recipe has a relatively small number of steps or a larger number of steps, which may affect the cooking time or complexity of the recipe. We feel that the number of steps matter because a recipe with too many steps might cause the reviewers to get exhausted and give a bad review.
+**1. 'n_steps':** We used a Binarizer to convert this feature into a binary variable based on a threshold of 8. This feature represents the number of steps required to prepare the recipe. By converting it into a binary variable, the model can capture whether a recipe has a relatively small number of steps or a larger number of steps, which may affect the cooking time or complexity of the recipe. We feel that the number of steps matter because a recipe with too many steps might cause the reviewers to get exhausted and give a bad review.
 
-2. 'minutes': We used a Binarizer to convert this feature into a binary variable based on a threshold of 100. This feature represents the total cooking time in minutes. By converting it into a binary variable, the model can differentiate between recipes with shorter cooking times and those with longer cooking times. This can be useful in capturing potential correlations between cooking time and the target variable. We feel that the cooking time matters because a recipe that takes too long to make might cause the reviewers to get exhausted and give a bad review.
+**2. 'minutes':** We used a Binarizer to convert this feature into a binary variable based on a threshold of 100. This feature represents the total cooking time in minutes. By converting it into a binary variable, the model can differentiate between recipes with shorter cooking times and those with longer cooking times. This can be useful in capturing potential correlations between cooking time and the target variable. We feel that the cooking time matters because a recipe that takes too long to make might cause the reviewers to get exhausted and give a bad review.
 
-3. 'n_ingredients': We applied a custom transformation using a FunctionTransformer. This feature represents the number of ingredients required for the recipe. By transforming this feature, I can extract additional information, such as whether a recipe has a small number of ingredients or a larger number of ingredients. This can be relevant as recipes with a higher number of ingredients might require more effort or be more complex.
+**3. 'n_ingredients':** We applied a custom transformation using a FunctionTransformer. This feature represents the number of ingredients required for the recipe. By transforming this feature, I can extract additional information, such as whether a recipe has a small number of ingredients or a larger number of ingredients. This can be relevant as recipes with a higher number of ingredients might require more effort or be more complex.
 
-4. Categorical Features: We used OneHotEncoder to encode the categorical variables that were in the tags column of the dataset. We found out that there are certain tags which have a high correlation with the ratings column and added these tags as columns to our dataframe with '0' representing that this tag wasn't present and '1' representing that the tag is present. By one-hot encoding these variables, the model can capture the relationships between different tags and their impact on the rating of the recipe.
+**4. Categorical Features:** We used OneHotEncoder to encode the categorical variables that were in the tags column of the dataset. We found out that there are certain tags which have a high correlation with the ratings column and added these tags as columns to our dataframe with '0' representing that this tag wasn't present and '1' representing that the tag is present. By one-hot encoding these variables, the model can capture the relationships between different tags and their impact on the rating of the recipe.
 
 The modeling algorithm we chose for this task is the Decision Tree Classifier. Decision trees are suitable for both classification tasks and handling a mix of continuous and categorical features. They can capture complex interactions and non-linear relationships in the data. 
 
 We performed a grid search using cross-validation to find the best hyperparameters for the decision tree classifier. The hyperparameters that ended up performing the best were:
-- 'max_depth': The maximum depth of the decision tree. The values considered were [5, 10, 15, 20]. This hyperparameter controls the complexity of the decision tree. 
-- 'min_samples_split': The minimum number of samples required to split an internal node. The values considered were [100, 200, 250, 275, 300]. This hyperparameter controls the minimum amount of data required to split a node, preventing overfitting.
-- 'criterion': The function to measure the quality of a split. The values considered were 'gini' and 'entropy'. This hyperparameter determines the impurity measure used for splitting the nodes.
+- **'max_depth':** The maximum depth of the decision tree. The values considered were [5, 10, 15, 20]. This hyperparameter controls the complexity of the decision tree. 
+- **'min_samples_split':** The minimum number of samples required to split an internal node. The values considered were [100, 200, 250, 275, 300]. This hyperparameter controls the minimum amount of data required to split a node, preventing overfitting.
+- **'criterion':** The function to measure the quality of a split. The values considered were 'gini' and 'entropy'. This hyperparameter determines the impurity measure used for splitting the nodes.
 
 To select the best hyperparameters, we used the GridSearchCV function, which performs an exhaustive search over the specified parameter values using cross-validation. The model's performance was evaluated based on accuracy, which measures the proportion of correct predictions.
 
