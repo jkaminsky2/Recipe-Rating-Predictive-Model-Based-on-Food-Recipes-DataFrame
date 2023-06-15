@@ -1,6 +1,8 @@
 **Authors: Joey Kaminsky and Ishaan Chadha**
+___
+# Exploratory Data Analysis
 
-**Our Exploratory Data Analysis on this dataset can be found [here](https://jkaminsky2.github.io/Analysis-of-food.com-Recipes/).**
+Our Exploratory Data Analysis on the recipes and ratings datasets can be found **[here](https://jkaminsky2.github.io/Analysis-of-food.com-Recipes/)**.
 
 ---
 # Framing the Problem
