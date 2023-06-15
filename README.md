@@ -50,12 +50,18 @@ The features we added to the model are:
 
 The modeling algorithm we chose for this task is the Decision Tree Classifier. Decision trees are suitable for both classification tasks and handling a mix of continuous and categorical features. They can capture complex interactions and non-linear relationships in the data. 
 
-We performed a grid search using cross-validation to find the best hyperparameters for the decision tree classifier. The hyperparameters that ended up performing the best were:
-- **'max_depth':** The maximum depth of the decision tree. The values considered were [5, 10, 15, 20]. This hyperparameter controls the complexity of the decision tree. 
-- **'min_samples_split':** The minimum number of samples required to split an internal node. The values considered were [100, 200, 250, 275, 300]. This hyperparameter controls the minimum amount of data required to split a node, preventing overfitting.
-- **'criterion':** The function to measure the quality of a split. The values considered were 'gini' and 'entropy'. This hyperparameter determines the impurity measure used for splitting the nodes.
+To select the best hyperparameters, we used the GridSearchCV function, which performs an exhaustive search over the specified parameter values using cross-validation. The model's performance was evaluated based on accuracy, which measures the proportion of correct predictions. The hyperparameters that were tuned using grid search are:
 
-To select the best hyperparameters, we used the GridSearchCV function, which performs an exhaustive search over the specified parameter values using cross-validation. The model's performance was evaluated based on accuracy, which measures the proportion of correct predictions.
+1. `max_depth`: This parameter determines the maximum depth of the decision tree. It controls the complexity of the model and helps prevent overfitting. The values tested are 5, 10, 15, 30. We saw which values of `max_depth` were actually being implemented in the best fit of the model and dependent on that chose the values of 5, 10, 15, 20.
+
+2. `min_samples_split`: This parameter specifies the minimum number of samples required to split an internal node. It affects the decision tree's ability to capture fine-grained patterns in the data. The values tested are 100, 200, 250, 275, 300. We saw which values of `min_samples_split` were actually being implemented in the best fit of the model and dependent on that chose the values of 100, 200, 250, 275, 300.
+
+3. `criterion`: This parameter defines the quality measure used to evaluate the splits in the decision tree. The two options tested are 'gini' and 'entropy'. 'Gini' measures the impurity of a node, while 'entropy' calculates the information gain.
+
+The hyperparameters that gave the best results were:
+* 'decision_tree__criterion': 'gini'
+* 'decision_tree__max_depth': 10
+* 'decision_tree__min_samples_split': 275
 
 Compared to the baseline model, the final model includes additional features and uses a more advanced modeling algorithm. By incorporating information about the number of steps, cooking time, and number of ingredients, as well as one-hot encoding the categorical features, the model can capture more nuanced patterns in the data. Additionally, the decision tree classifier can handle non-linear relationships and interactions between features. The grid search helped in finding the best hyperparameters, resulting in a model that is fine-tuned for the data. Overall, the final model's performance shows a significant improvement over the baseline model due to the inclusion of these additional features and the use of a more sophisticated algorithm.
 
