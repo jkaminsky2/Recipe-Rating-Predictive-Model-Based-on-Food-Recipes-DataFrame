@@ -61,7 +61,7 @@ To select the best hyperparameters, we used the GridSearchCV function, which per
 The hyperparameters that gave the best results were:
 * `criterion`: 'gini'
 * `max_depth`: 10
-* `min_samples_split`: 275
+* `min_samples_split`: 300
 
 Compared to the baseline model, the final model includes additional features and uses a more advanced modeling algorithm. By incorporating information about the number of steps, cooking time, and number of ingredients, as well as one-hot encoding the categorical features, the model can capture more nuanced patterns in the data. Additionally, the decision tree classifier can handle non-linear relationships and interactions between features. The grid search helped in finding the best hyperparameters, resulting in a model that is fine-tuned for the data. Overall, the final model's performance shows a significant improvement over the baseline model due to the inclusion of these additional features and the use of a more sophisticated algorithm. Our final model also predicts more of the other ratings ('1', '2', '3', '4') rather than mostly predicting the rating of '5'. This is important because if we mostly guess '5' then our prediction modeis left redundant.
 
