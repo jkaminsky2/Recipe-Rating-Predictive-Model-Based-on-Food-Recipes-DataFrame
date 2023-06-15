@@ -25,3 +25,5 @@ The model is split randomly into a training model (0.8) and test model (0.2) to 
 The performance of the model is evaluated using accuracy, which is calculated by the `score` method of the pipeline on the test set. The accuracy represents the proportion of correctly predicted ratings out of all the predictions made. We get an accuracy of approximately 74% when we run this model on our test dataset.
 
 We believe that our model isn't up to the mark because it is highly biased towards predicting '5' as the rating of the recipes. Our model over predicts '5's and underpredicts all the other ratings. We believe that adding more features to our model that help distinguish between the rating of a recipe as a '5' and all the other ratings would greatly help our model predict other ratings too, and possibly increase the accuracy of our model.
+
+---
