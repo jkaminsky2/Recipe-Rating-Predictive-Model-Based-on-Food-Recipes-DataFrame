@@ -89,7 +89,7 @@ Test Statistic: |(Accuracy of recipes that take less than 35 minutes) - (Accurac
 
 Significance Level: alpha = 0.05
 
-<iframe src="assets/perm_test_recipes4.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/perm_test_recipes5.html" width=800 height=600 frameBorder=0></iframe>
 p-value = 0.00
 
 Because our p-value = 0.00 is less than the significance level of alpha = 0.05, we can reject the null hypothesis. There is statistically significant evidence that our model could be unfair, specifically that its accuracy for recipes that take less than 35 minutes could be not equal to its accuracy for recipes that take 35 minutes or more. It should be noted that due to not having randomized controlled trials, we cannot make definitive conclusions about the truth or falsehood of either hypothesis.
