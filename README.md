@@ -1,1 +1,4 @@
-# food-recipes-model
+**Authors: Joey Kaminsky and Ishaan Chadha**
+
+---
+# Introduction
