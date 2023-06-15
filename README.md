@@ -30,6 +30,8 @@ The performance of the model is evaluated using accuracy, which is calculated by
 
 We believe that our model isn't up to the mark because it is highly biased towards predicting '5' as the rating of the recipes. Our model over predicts '5's and underpredicts all the other ratings. We believe that adding more features to our model that help distinguish between the rating of a recipe as a '5' and all the other ratings would greatly help our model predict other ratings too, and possibly increase the accuracy of our model.
 
+Additionally, we need to improve upon the accuracy of the overall model. A good baseline to compare our model's accuracy to is the rate of 5's in the dataset due to it being so common; our baseline model has an accuracy of 73.6%, whereas the number of 5's in the testing data is roughly 77%. Therefore, our model is not good right not, but we can greatly improve on the accuracy (and thus the overall effectivenss) of our model by adding more valuable predictor variables.
+
 ---
 # Final Model
 
