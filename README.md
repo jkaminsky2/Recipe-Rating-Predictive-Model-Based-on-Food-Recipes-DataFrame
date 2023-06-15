@@ -12,13 +12,13 @@ At the time of prediction of the rating of a particular recipe and reviewer, we 
 
 In our Baseline Model, we try to predict the ratings that different recipes on [food.com](https://www.food.com) are given.
 
-In our model, we use a pipeline that consists of a preprocessing step followed by a decision tree classifier. The preprocessing step involves transforming the features before feeding them into the decision tree classifier. The preprocessor consists of a ColumnTransformer which applies different features to different columns of the dataset. We Standard Scale the 'calories (#)' column and One-Hot-Encode the 'n_ingredients_cat' column. It is a categorical feature derived from the 'n_ingredients' feature. It categorizes the number of ingredients into three categories: 0 for less than 7 ingredients, 1 for 7-10 ingredients, and 2 for more than 10 ingredients. The rest of the columns in the dataset are dropped and thus aren't factored in while predicting the 'rating' column of the dataset.
+In our model, we use a pipeline that consists of a preprocessing step followed by a decision tree classifier. The preprocessing step involves transforming the features before feeding them into the decision tree classifier. The preprocessor consists of a ColumnTransformer which applies different features to different columns of the dataset. We Standard Scale the `calories (#)` column and One-Hot-Encode the `n_ingredients_cat` column. It is a categorical feature derived from the `n_ingredients` feature. It categorizes the number of ingredients into three categories: 0 for less than 7 ingredients, 1 for 7-10 ingredients, and 2 for more than 10 ingredients. The rest of the columns in the dataset are dropped and thus aren't factored in while predicting the `rating` column of the dataset.
 
 **Features:**
 
-**1. Quantitative features:** 'calories (#)' (one feature). It is a quantitative feature representing the number of calories in a recipe. It is standardized (scaled) using the StandardScaler.
+**1. Quantitative features:** `calories (#)` (one feature). It is a quantitative feature representing the number of calories in a recipe. It is standardized (scaled) using the StandardScaler.
 
-**2. Nominal feature:** 'n_ingredients_cat' (one feature). It is a categorical feature derived from the 'n_ingredients' feature. It categorizes the number of ingredients into three categories: 0 for less than 7 ingredients, 1 for 7-10 ingredients, and 2 for more than 10 ingredients. It is one-hot encoded using the OneHotEncoder.
+**2. Nominal feature:** `n_ingredients_cat` (one feature). It is a categorical feature derived from the `n_ingredients` feature. It categorizes the number of ingredients into three categories: 0 for less than 7 ingredients, 1 for 7-10 ingredients, and 2 for more than 10 ingredients. It is one-hot encoded using the OneHotEncoder.
 
 The model is split randomly into a training model (0.8) and test model (0.2) to make sure that we don't overfit our model.
 
