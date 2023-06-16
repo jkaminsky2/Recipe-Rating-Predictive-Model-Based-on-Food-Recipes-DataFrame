@@ -75,9 +75,9 @@ Compared to the baseline model, the final model includes additional features and
 We decided to look into whether our model preform differently based on the number of minutes of a recipe. To further investigate this, we set up the following permuation test:
 
 
-Group 1: Recipes that take 35 minutes or more to make
+Group 1: Short recipes: recipes that take 35 minutes or more to make
 
-Group 2: Recipes that take less than 35 minutes to make
+Group 2: Long recipes: recipes that take less than 35 minutes to make
 
 We chose 35 minutes as the divider between the two groups as this is the value that most evenly splits up the dataset into the groups (roughly 50% of the dataframe `to_work` is in each group).
 
