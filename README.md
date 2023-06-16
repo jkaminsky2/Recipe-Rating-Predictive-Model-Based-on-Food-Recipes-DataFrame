@@ -54,7 +54,7 @@ The modeling algorithm we chose for this task is the Decision Tree Classifier. D
 
 To select the best hyperparameters, we used the GridSearchCV function, which performs an exhaustive search over the specified parameter values using cross-validation. The model's performance was evaluated based on accuracy, which measures the proportion of correct predictions. The hyperparameters that were tuned using grid search are:
 
-1. `max_depth`: This parameter determines the maximum depth of the decision tree. It controls the complexity of the model and helps prevent overfitting. The values tested are 5, 10, 15, 30. We saw which values of `max_depth` were actually being implemented in the best fit of the model and dependent on that chose the values of 5, 10, 15, 30.
+1. `max_depth`: This parameter determines the maximum depth of the decision tree. It controls the complexity of the model and helps prevent overfitting. The values tested are 10, 15, 25, 30, 50. We saw which values of `max_depth` were actually being implemented in the best fit of the model and dependent on that chose the values of 10, 15, 25, 30, 50.
 
 2. `min_samples_split`: This parameter specifies the minimum number of samples required to split an internal node. It affects the decision tree's ability to capture fine-grained patterns in the data. The values tested are 100, 200, 250, 275, 300. We saw which values of `min_samples_split` were actually being implemented in the best fit of the model and dependent on that chose the values of 100, 200, 250, 275, 300.
 
@@ -62,13 +62,10 @@ To select the best hyperparameters, we used the GridSearchCV function, which per
 
 The hyperparameters that gave the best results were:
 * `max_depth`: 10
-* `min_samples_split`: 300
+* `min_samples_split`: 275
 * `criterion`: 'entropy'
 
-Compared to the baseline model, the final model includes additional features and uses a more advanced modeling algorithm. By incorporating information about the number of steps, cooking time, and number of ingredients, as well as one-hot encoding the categorical features of the reviews, the model can capture more nuanced patterns in the data. Additionally, the decision tree classifier can handle non-linear relationships and interactions between features. The grid search helped in finding the best hyperparameters, resulting in a model that is fine-tuned for the data. Overall, the final model's performance shows a significant improvement over the baseline model in overall accuracy due to the inclusion of these additional features and the use of a more sophisticated algorithm. However, this comes at the cost of guessing 5's more often; this is due to the overall frequency of 5's in the dataset, leading to possible trends being overlooked by this fact.
-
-#DELETE
-Our final model also predicts more of the other ratings ('1', '2', '3', '4') rather than mostly predicting the rating of '5'. This is important because if we mostly guess '5', then our prediction model is not all that useful.
+Compared to the baseline model, the final model includes additional features and uses a more advanced modeling algorithm. By incorporating information about the number of steps, cooking time, and number of ingredients, as well as one-hot encoding the categorical features of the reviews, the model can capture more nuanced patterns in the data. Additionally, the decision tree classifier can handle non-linear relationships and interactions between features. The grid search helped in finding the best hyperparameters, resulting in a model that is fine-tuned for the data. Overall, the final model's performance shows a significant improvement over the baseline model in overall accuracy due to the inclusion of these additional features and the use of a more sophisticated algorithm. However, this comes at the cost of the bias of guessing 5's more often; this is due to the overall frequency of 5's in the dataset, leading to possible trends being overlooked by this fact.
 
 ---
 
